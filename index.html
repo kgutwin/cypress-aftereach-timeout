@@ -1,0 +1,12 @@
+<div id="outer">
+  The DOM is loaded but the element is not inserted yet. Wait 1000 ms...
+</div>
+<script>
+  setTimeout(() => {
+    const outer = document.getElementById("outer");
+    const newInner = document.createElement("div");
+    newInner.setAttribute("data-cy", "item");
+    newInner.appendChild(document.createTextNode("was found"));
+    outer.replaceChildren("The timeout is complete", newInner);
+  }, 1000);
+</script>
